@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伸缩布局</title>
+    <style>
+        body, ul, li, dl, dt, dd, h1, h2, h3, h4, h5 {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: '微软雅黑';
+            background-color: #F7F7F7;
+        }
+        ul {
+            list-style: none;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 auto;
+        }
+        .wrapper > header {
+            text-align: center;
+            line-height: 1;
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .wrapper > section {
+            min-height: 300px;
+            margin-bottom: 30px;
+            box-shadow: 1px 1px 4px #DDD;
+            background-color: #FFF;
+        }
+        .wrapper section > header {
+            line-height: 1;
+            padding: 10px;
+            font-size: 22px;
+            color: #333;
+            background-color: #EEEEEE;
+        }
+        .wrapper .wrap-box {
+            padding: 20px;
+        }
+
+
+        /*
+        伸缩布局：
+          display: flex指定父盒子为伸缩盒子
+          然后对子元素设置属性，来调整布局方式
+        */
+        /*伸缩布局：两端对齐*/
+        section:nth-child(2) ul {
+            display: flex;
+            justify-content: space-between;
+        }
+        section:nth-child(2) ul li {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>CSS3-伸缩布局</header>
+    <section>
+        <header>两端对齐</header>
+        <div class="wrap-box">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>文本换行</header>
+        <div class="wrap-box">
+
+        </div>
+    </section>
+    <section>
+        <header>文字溢出</header>
+        <div class="wrap-box">
+
+        </div>
+    </section>
+</div>
+</body>
+</html>

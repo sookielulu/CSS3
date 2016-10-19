@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视距</title>
+    <style>
+        .box {
+            width: 310px;
+            height: 438px;
+            border: 1px solid salmon;
+            margin: 100px auto;
+            perspective: 500px;  /*视距是写在父元素上面的*/
+            perspective-origin: 30% 50%;
+        }
+        .box img {
+            transition: all 2s;
+            transform-origin: left;
+        }
+        .box:hover img {
+            transform: rotateY(50deg);
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="image/pk1.png" alt="">
+</div>
+</body>
+</html>

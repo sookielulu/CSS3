@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>块级元素和内联元素</title>
+<link rel="stylesheet" href="重置样式表.css">
+<style>
+.a{ width:100px; height:100px; background:red;}
+.b{ width:100px; height:100px; background:green;}
+/*a,b为块级元素，要占据一整行*/
+
+.span1{ width:100px; height:100px; background:red;}
+/*span为内联元素，在定义宽度和高度时必须变成块级元素，否则无效*/
+.span2{ width:100px; height:100px; background:green; display:inline-block;}
+/*若为block，则在下一行。若为inline-block则在同一行，表示在水平方向上仍为行列元素，在垂直方向上为块级元素*/
+</style>
+</head>
+
+<body>
+<div class="a"></div>
+<div class="b"></div> 
+
+<span class="span1">这是span-1</span>
+<span class="span2">这是span-2</span>    
+</body>
+</html>

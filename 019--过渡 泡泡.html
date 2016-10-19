@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>泡泡</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+        .pop {
+            width: 350px;
+            height: 100px;
+            margin: 100px auto;
+            background: url("image/paopao.png") no-repeat top left,
+        url("image/paopao.png") no-repeat right bottom #369;
+            border-radius: 6px;
+            transition: all 4s;
+        }
+        .pop:hover {
+            background-position: right bottom, top left;
+        }
+    </style>
+</head>
+<body>
+<div class="pop"></div>
+</body>
+</html>
