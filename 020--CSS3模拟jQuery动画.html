@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3模拟jQuery动画</title>
+    <style>
+        body, ul, li, dl, dt, dd, h1, h2, h3, h4, h5 {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: '微软雅黑';
+            background-color: #F7F7F7;
+        }
+        ul {
+            list-style: none;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 auto;
+        }
+        .wrapper > header {
+            text-align: center;
+            line-height: 1;
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .wrapper > section {
+            min-height: 300px;
+            margin-bottom: 30px;
+            box-shadow: 1px 1px 4px #DDD;
+            background-color: #FFF;
+        }
+        .wrapper section > header {
+            line-height: 1;
+            padding: 10px;
+            font-size: 22px;
+            color: #333;
+            background-color: #EEEEEE;
+        }
+        .wrapper .wrap-box {
+            padding: 20px;
+        }
+
+        /*CSS3模拟jQuery动画*/
+        .show div{
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255,65,45,0);
+            transition: 2s;
+        }
+        .show div:hover {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255,65,45,1);
+        }
+        .bigger div {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            background: url("image/background--bg.jpg") no-repeat;
+            background-position: center;
+            background-size: 100%;
+            transition: 2s;
+        }
+        .bigger div:hover {
+            background-size: 120%; /*这句很重要*/
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>CSS3模拟jQuery动画</header>
+    <section class="show">
+        <header>show/hide</header>
+        <div class="wrap-box">
+        </div>
+    </section>
+    <section class="bigger">
+        <header>bigger</header>
+        <div class="wrap-box">
+        </div>
+    </section>
+</div>
+</body>
+</html>

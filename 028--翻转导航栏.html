@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>翻转导航栏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+        body {
+            text-align: center;
+        }
+        nav {
+            display: inline-block;
+            margin-top: 100px;
+        }
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            perspective: 700px;/*为了给span加视距*/
+        }
+        nav a span {
+            display: inline-block;
+            line-height: 40px;
+            background-color: #2195de;
+            padding: 0 20px;
+            position: relative;
+            transition: 0.8s;
+            transform-origin: top;
+            transform-style: preserve-3d;
+        }
+        nav a span::after {
+            content: attr(data-hover);  /*取出自定义属性的值*/
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0965a0;
+            transform: rotateX(-90deg);  /*即头向前翻*/
+            transform-origin: top;
+        }
+        nav a:hover span {
+            transform: rotateX(90deg) translateY(-20px);
+            /*盒子向上20px，让旋转效果更好看*/
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="#">
+        <span data-hover="前端学院">传智播客</span>
+    </a>
+</nav>
+<nav>
+    <a href="#">
+        <span data-hover="后端时代">传智播客</span>
+    </a>
+</nav>
+<nav>
+    <a href="#">
+        <span data-hover="Python">传智播客</span>
+    </a>
+</nav>
+<nav>
+    <a href="#">
+        <span data-hover="flask">传智播客</span>
+    </a>
+</nav>
+<nav>
+    <a href="#">
+        <span data-hover="加入我们">传智播客</span>
+    </a>
+</nav>
+<nav>
+    <a href="#">
+        <span data-hover="详情咨询">传智播客</span>
+    </a>
+</nav>
+
+</body>
+</html>

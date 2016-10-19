@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">                                <!--W3C上的CSS属性-->
+<title>CSS属性详解</title>
+<style>
+.box{background:url(../HTML5/HTML5--Demo1/image/HTML5--Demo1-1.png) no-repeat top center; width:500px; height:60px; border:dashed 1px #999999;}/*top表示在顶部，center表示居中，二者也可以写成像素值，表示相对于原点的偏移(默认原点为左上角)   background-attachment:fixed 表示背景图片不会跟随滚动条滚动*/
+.txt1{ font-family:SimSun-ExtB; font-size:24px; line-height:24px; text-align:center;}
+.txt2{ width:500px; height:150px; border:dashed 1px #999999; font-size:18px; text-indent:2em; word-spacing:20px;}
+       /*中文可实现自动换行,text-indent:2em;表示缩进2倍单位个字体(即字体的2倍)。 word-spacing:20px表示字之间的距离*/
+.txt3{ width:500px; height:150px; border:dashed 1px #999999; font-size:18px; word-break:break-all; text-indent:2em; 
+word-spacing:30px; letter-spacing:10px; text-transform:uppercase;}
+       /*英文不可实现自动换行，需要通过样式来控制。word-spacing表示单词与单词之间的距离，letter-spacing表示字母与字母之间的距离。trans-transform表示转换大小写*/
+
+.menu1{ width:100%; height:40px; line-height:40px; background:#ccc;}
+.menu1 li{ float:left; display:inline;}
+.menu1 li a{ display:block; padding:0 30px;}
+
+.menu2{ width:100px; background:#ccc;}
+.menu2 li{ float:left; display:inline; height:40px; line-height:40px;}
+.menu2 li a{ display:block; padding:0 15px;}
+
+.move{ width:100px; height:100px; border-radius:20%; background:#9F0; position:relative; animation:mymove 3s infinite; -moz-animation:mymove 3s infinite;}     /*设置动画效果时，别忘了写一个相对定位，否则无效果。border-radius表示圆角，设为100%即为圆*/
+
+@keyframes mymove
+{
+from {top:0px;}
+to {top:100px;}
+}
+
+@-moz-keyframes mymove
+{
+from {top:0px;}
+to {top:100px;}
+}
+
+</style>
+<link rel="stylesheet" href="重置样式表.css">
+</head>
+
+<body>
+<div class="box"></div>
+<div class="txt1">欢迎欢迎</div>
+<div class="txt2">爱好 是 分开了哈弗安静会分开后爱好是分开了哈弗安静会分开后爱好是分开了哈弗安静会分开后爱好是分开了哈弗安静会分开后爱好是分开了哈弗安静会分开后爱好是分开了哈弗安静会分开后爱好是分开了哈弗安静会分开后爱好是分开了哈弗安静会分开后爱好是</div>
+<div class="txt3">hakfhaoiu troeauteolajflhakfhaoiutroeajkflajflajeroiequtioalkjfdkl;jfakljfojfeioruoputoijal;jfljfa;sjfahfu</div>
+
+<ul class="menu1">
+	<li><a href="#">菜单一</li>
+    <li><a href="#">菜单二</li>
+    <li><a href="#">菜单三</li>
+    <li><a href="#">菜单四</li>
+    <li><a href="#">菜单五</li>
+</ul>
+<ul class="menu2 clearfix">          <!--清除浮动，可以在此行加clearfix，也可以在45行下面加<div class="clear"></div>-->
+	<li><a href="#">菜单一</li>       <!--不论是横着还是竖着的菜单，li都一定要加浮动，否则有的浏览器下面会有空白-->
+    <li><a href="#">菜单二</li>
+    <li><a href="#">菜单三</li>
+    <li><a href="#">菜单四</li>
+    <li><a href="#">菜单五</li>
+</ul>
+
+<div class="move"></div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS元素的可见与隐藏</title>
+<link rel="stylesheet" href="重置样式表.css">
+<style>
+.a{ width:100px; height:100px; background:red; display:none;} /*使用display:none隐藏元素时，元素所占位置也被隐藏，即b的绿色块会出现在a的位置
+而用visibility:hidden时，a的位置仍被保留，即b中绿色块出现在下一行*/
+.b{ width:100px; height:100px; background:green;} 
+
+.box{ width:1000px; height:36px; background:#999; margin:0 auto;}
+.box ul li{ float:left; display:inline; height:36px; line-height:36px; position:relative;}
+ /*要给这里的li(公司文化)做二级菜单，首先把这个li变成相对定位*/
+.box ul li a{ color:#c36; padding:0 15px; display:block;}
+.box ul li a:hover{ background:#09C; color:#fff; text-decoration:none;}
+.div_menu{ width:100px; height:108px; position:absolute; left:0; top:36px; background:#9C9; display:none;}
+.div_menu ul li{ width:100px; float:left; display:inline;}
+.div_menu ul li a:hover{ background:#C30;}
+.box ul li:hover div{ display:block;}
+</style>
+</head>
+
+<body>
+<div class="a"></div>
+<div class="b"></div>
+
+<div class="box">
+	<ul>
+    	<li>
+        	<a href="#">首页</a>
+        </li>
+        <li>
+        	<a href="#">公司文化</a>
+            <div class="div_menu"> 
+            	<ul>
+                	<li><a href="#">企业团队</a></li>
+                    <li><a href="#">团队照片</a></li>
+                    <li><a href="#">团队荣誉</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+        </li>
+        <li>
+        	<a href="#">企业介绍</a>
+            <div class="div_menu"> 
+            	<ul>
+                	<li><a href="#">企业团队</a></li>
+                    <li><a href="#">团队照片</a></li>
+                    <li><a href="#">团队荣誉</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            
+        </li>
+        <li>
+        	<a href="#">产品展示</a>
+            <div class="div_menu"> 
+            	<ul>
+                	<li><a href="#">企业团队</a></li>
+                    <li><a href="#">团队照片</a></li>
+                    <li><a href="#">团队荣誉</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+          
+        </li>
+    </ul>
+</div>
+</body>
+</html>

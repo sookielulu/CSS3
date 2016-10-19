@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <!--!important用法。前后都有颜色定义，实际效果为蓝色。由于IE6不识别！important，则可用于处理IE6与IE7/FireFox等的兼容问题。即在IE7/FireFox中显示为蓝色，在IE6中为红色-->
+    <!--*+html与*html是IE特有的标签，FireFox暂不支持，而*+html又为IE7特有-->
+<title>列表样式</title>
+<style>
+.list{list-style:none;}
+.list li{height:30px; line-height:30px; background-color:#99C; border-bottom:solid 1px #CCCCCC;}
+.list li:nth-child(2n){background:#9C6;}
+.box{width:50px; height:50px; background-color:blue !important; background-color:red;}
+*+html{background:red;}
+html{background:gray;}
+*+box{} 
+</style>
+</head>
+
+<body>
+<ul class="list">
+	<li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+</ul>
+
+<div class="box">我们好!</div>
+</body>
+</html>
